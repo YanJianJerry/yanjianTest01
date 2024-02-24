@@ -1,0 +1,355 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.flux.wmsv6</groupId>
+	<artifactId>wmsv6-rf10srv</artifactId>
+	<packaging>war</packaging>
+	<version>6.2.2-SNAPSHOT</version>
+	<name>wmsv6-rf10srv Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<com.flux.artifacts.version>6.2.2-SNAPSHOT</com.flux.artifacts.version>
+		<org.springframework.version>5.3.27</org.springframework.version>
+		<spring-boot.version>2.4.13</spring-boot.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- <org.apache.logging.log4j.version>2.15.0</org.apache.logging.log4j.version>  -->
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<powermock.version>2.0.7</powermock.version>
+	</properties>
+
+	<dependencies>
+		<!-- compile -->
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>hsf.schema</artifactId>
+			<version>edas1.0.1</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
+			<version>${org.apache.logging.log4j.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency> -->
+		<!-- V6 -->
+		<dependency>
+			<groupId>com.flux.scev6</groupId>
+			<artifactId>scev6-utils-wms</artifactId>
+			<version>${com.flux.artifacts.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>ch.qos.logback</groupId>
+					<artifactId>logback-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.flux.wmsv6</groupId>
+			<artifactId>wmsv6-rf10api</artifactId>
+			<version>${com.flux.artifacts.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.flux.scev6</groupId>
+			<artifactId>scev6-utils-apps</artifactId>
+			<version>${com.flux.artifacts.version}</version>
+		</dependency>
+		<!-- V6  SCEV6 Utils TMS -->
+		<dependency>
+            <groupId>com.flux.scev6</groupId>
+            <artifactId>scev6-utils-tms</artifactId>
+            <version>${com.flux.artifacts.version}</version>
+            <exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+				<exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-core</artifactId>
+                </exclusion>		
+			</exclusions>
+        </dependency>
+
+		<!-- a21 a26 a31 a38 utils -->
+
+		<!-- 标准收货 -->
+		<dependency>
+			<groupId>com.flux.wmsv6</groupId>
+			<artifactId>wmsv6-a21InbBizSrv</artifactId>
+			<version>${com.flux.artifacts.version}</version>
+		</dependency>
+
+		<!-- 库存 -->
+		<dependency>
+			<groupId>com.flux.wmsv6</groupId>
+			<artifactId>wmsv6-a26InvBizSrv</artifactId>
+			<version>${com.flux.artifacts.version}</version>
+		</dependency>
+
+		<!-- 拣货 -->
+		<dependency>
+			<groupId>com.flux.wmsv6</groupId>
+			<artifactId>wmsv6-a31OubBizSrv</artifactId>
+			<version>${com.flux.artifacts.version}</version>
+		</dependency>
+
+		<!-- 费收 -->
+		<dependency>
+			<groupId>com.flux.wmsv6</groupId>
+			<artifactId>wmsv6-a38BilBizSrv</artifactId>
+			<version>${com.flux.artifacts.version}</version>
+		</dependency>
+
+		<!-- test -->
+		<!--junit5-->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<version>5.9.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-runner</artifactId>
+			<version>1.8.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-launcher</artifactId>
+			<version>1.8.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-console-standalone</artifactId>
+			<version>1.8.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.8.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-module-junit4</artifactId>
+			<version>${powermock.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-api-mockito2</artifactId>
+			<version>${powermock.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<version>${spring-boot.version}</version>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-json</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${org.springframework.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-core</artifactId>
+				</exclusion>
+			</exclusions>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- provided -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.27</version>
+			<scope>provided</scope>
+			<exclusions>
+                <exclusion>
+                    <groupId>com.google.protobuf</groupId>
+                    <artifactId>protobuf-java</artifactId>
+                </exclusion>
+            </exclusions>
+		</dependency>
+		<dependency>
+			<groupId>net.sourceforge.jtds</groupId>
+			<artifactId>jtds</artifactId>
+			<version>1.3.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<version>7.0.0.jre8</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>ojdbc</groupId>
+			<artifactId>ojdbc</artifactId>
+			<version>12.1.0.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.1.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<finalName>rf10srv</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.4.4</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.3.1</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+			<!-- jacoco 插件在测试阶段之前"运行"(通常在初始化生命周期阶段运行预备代理目标)  -->
+			<!-- 当它运行时，它只是将一个名为"argLine"的 maven 属性设置为类似于-javaagent = jacoco.jar 的东西 -->
+			<!-- 导致本地的参数失效，通过生命周期来定义测试环境参数 ${argLine} ${env.MAVEN_OPTS}-->
+			<!-- ${argLine} 代表原有jacoco参数-->
+			<!-- ${env.MAVEN_OPTS} 本地环境的maven MAVEN_OPTS参数 -->
+			<!-- 如果不配置系统变量，打包测试时log4j会报错 -->
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M7</version>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+				<executions>
+					<!-- 单元测试 -->
+					<execution>
+						<id>unit-test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+						<configuration>
+							<skip>${maven.test.skip}</skip>
+							<argLine>${argLine} ${env.MAVEN_OPTS}</argLine>
+							<excludes>
+								<exclude>**/*IntegrationTest.java</exclude>
+							</excludes>
+						</configuration>
+					</execution>
+					<!-- 集成测试 -->
+					<execution>
+						<id>integration-test</id>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+						<configuration>
+							<skip>${skipITs}</skip>
+							<argLine>${argLine} ${env.MAVEN_OPTS}</argLine>
+							<includes>
+								<include>**/*IntegrationTest.java</include>
+							</includes>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- 集成测试插件 -->
+			<!-- maven-surefire-plugin专为运行单元测试而设计，如果任何测试失败，那么它将立即使构建失败。 -->
+			<!-- maven-failsafe-plugin专为运行集成测试而设计，如果实际运行测试存在测试失败，则可以将失败的构建解耦。” -->
+			<plugin>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.22.2</version>
+			</plugin>
+			<!-- 代码覆盖率插件 -->
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.8</version>
+				<configuration>
+					<skip>${maven.test.skip}</skip>
+					<destFile>${basedir}/target/coverage-reports/jacoco-unit.exec</destFile>
+					<dataFile>${basedir}/target/coverage-reports/jacoco-unit.exec</dataFile>
+					<output>file</output>
+					<append>true</append>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<!-- select non-aggregate reports -->
+							<report>report</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting>
+</project>

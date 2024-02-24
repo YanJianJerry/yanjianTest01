@@ -1,0 +1,14 @@
+
+l
+java:S1104"VMake identityId a static final constant or non-public and provide accessors if needed.(ƒ¹Ö
+f
+java:S1104"PMake name a static final constant or non-public and provide accessors if needed.( şÍ¾
+e
+java:S1104"OMake age a static final constant or non-public and provide accessors if needed.(×Áò¿
+h
+java:S1104"RMake height a static final constant or non-public and provide accessors if needed.(ñ½
+m
+java:S1104"RMake weight a static final constant or non-public and provide accessors if needed.(©ì¹ûÿÿÿÿ
+l	java:S116"RRename this field "MAX_AGE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(í¨Ôüÿÿÿÿ
+7
+java:S1116"Remove this empty statement.(í¨Ôüÿÿÿÿ
