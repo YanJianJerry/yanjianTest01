@@ -6,6 +6,8 @@ import com.alibaba.fastjson.JSONObject;
 import com.bean.NewInstance;
 import com.bean.pojo.Person;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -32,7 +34,10 @@ public class FastJsonTest01 {
         //3.
 //        test03();
         //4.
-        test04();
+//        test04();
+
+        //5.
+        test05();
     }
 
     /**
@@ -99,6 +104,10 @@ public class FastJsonTest01 {
         System.out.println(map2);
     }
 
+    /**
+     * Object[] 转json字符串 转List
+     *
+     */
     public static void test04(){
         NewInstance newInstance = new NewInstance();
         Object[] persons = newInstance.getPerson();
@@ -111,6 +120,32 @@ public class FastJsonTest01 {
         System.out.println(JSON.toJSONString(personsList));
 
         //
+
+    }
+
+    /**
+     * List<Map> 转 json
+     *
+     */
+    public static void test05(){
+        // 声明变量
+        Map map1 = new HashMap();
+        Map map2 = new HashMap();
+        ArrayList arrayList = new ArrayList();
+
+        // 变量赋值
+        map1.put("name","Jerry");
+        map1.put("skill","Java");
+
+        map2.put("name","Tom");
+        map2.put("skill","Python");
+
+        arrayList.add(map1);
+        arrayList.add(map2);
+
+        // 执行方法
+        String jsonStr = JSON.toJSONString(arrayList);
+        System.out.println(jsonStr);
 
     }
 }
