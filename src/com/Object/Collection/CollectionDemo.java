@@ -1,4 +1,4 @@
-package com.Object.Collection;
+package Object.Collection;
 
 import com.Object.MyObjects.Student;
 
