@@ -1,4 +1,4 @@
-package com.Object.Arrays;
+package Object.Arrays;
 
 import com.Object.MyObjects.Student;
 
@@ -15,7 +15,7 @@ public class ObjectArrayTest {
     public static void main(String[] args) {
 
         //创建对象数组对象
-        ObjectArray objArray = new ObjectArray();
+        com.Object.Arrays.ObjectArray objArray = new com.Object.Arrays.ObjectArray();
 
         //创建学生对象，并放到对象数组中
         Student stu1 = new Student();
