@@ -1,4 +1,4 @@
-package Object.Arrays;
+package object.Arrays;
 
 import com.Object.MyObjects.Student;
 

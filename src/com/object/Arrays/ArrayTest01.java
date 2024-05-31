@@ -1,4 +1,4 @@
-package Object.Arrays;
+package object.Arrays;
 
 public class ArrayTest01 {
     public static void main(String[] args) {
