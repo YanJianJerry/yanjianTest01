@@ -37,7 +37,10 @@ public class FastJsonTest01 {
 //        test04();
 
         //5.
-        test05();
+//        test05();
+
+        //6.
+        test06();
     }
 
     /**
@@ -147,5 +150,21 @@ public class FastJsonTest01 {
         String jsonStr = JSON.toJSONString(arrayList);
         System.out.println(jsonStr);
 
+    }
+
+    /**
+     * 包含数组的json字符串转对象
+     */
+    public static void test06(){
+        //
+        String jsonstr1 = "{\"messge\":\"SUCCES\",\"data\":[\"2014-02-12\",\"2020-01-01\"]}";
+
+        //
+        JSONObject jsonObj1 = JSON.parseObject(jsonstr1);
+        System.out.println(jsonObj1.get("data"));
+
+        //
+        JSONArray jsonArr1 = JSON.parseArray(jsonObj1.get("data").toString());
+        System.out.println(jsonArr1.get(0));
     }
 }
