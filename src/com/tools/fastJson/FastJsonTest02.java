@@ -16,7 +16,7 @@ public class FastJsonTest02 {
 
     public void test01(){
         Map<String,Object> map1 = new HashMap<>();
-        HashMap<String, String> map2 = null;
+        HashMap<String, String> map2;
         map1.put("code","OK");
         String[] strArray = {"123","234"};
         map1.put("data",strArray);

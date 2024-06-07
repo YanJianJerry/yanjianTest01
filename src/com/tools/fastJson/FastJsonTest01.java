@@ -37,10 +37,10 @@ public class FastJsonTest01 {
 //        test04();
 
         //5.
-//        test05();
+        test05();
 
         //6.
-        test06();
+//        test06();
     }
 
     /**
