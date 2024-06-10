@@ -21,7 +21,7 @@ public class TestDouble01 {
 
         float a =1.0f-0.9f;
         float b =0.9f-0.8f;
-        float diff =1e-6f;
+        float diff =1e-8f;
         Float aObj = Float.valueOf(a);
         Float bObj = Float.valueOf(b);
         System.out.println(diff);
