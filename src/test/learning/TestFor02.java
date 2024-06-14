@@ -1,4 +1,4 @@
-package Test.learning;
+package test.learning;
 
 /*
 * 增强for循环，主要用来遍历数组

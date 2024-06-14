@@ -1,4 +1,4 @@
-package Test.learning;
+package test.learning;
 
 /*
         * 测试循环语句

@@ -1,5 +1,7 @@
 package com.object.testPattern;
 
+import java.util.Scanner;
+
 /**
  * @Author: yanjian
  * @CreateDate: 2022/12/25 21:30
@@ -16,6 +18,10 @@ public class RegExpTest {
         System.out.println("===========================");
         //2.
         Test02();
+
+        //
+        Test03();
+
     }
 
     //1.
@@ -42,5 +48,30 @@ public class RegExpTest {
             boolean flag1 = strQty1.matches(regex1);
 
             System.out.println("2.flag1: "+flag1);
+    }
+
+    //
+    public static void Test03(){
+        String input = "";
+
+        while (!"OUT".equalsIgnoreCase(input)){
+            Scanner scanner = new Scanner(System.in);
+            if(scanner.hasNext()){
+                input = scanner.next();
+                System.out.println("是否正整数:"+isPositiveInteger(input));
+            }
+        }
+    }
+
+    // 判断是否正整数
+    public static boolean isPositiveInteger(String qtyStr){
+        if(qtyStr == null || "".equalsIgnoreCase(qtyStr)){
+            return false;
+        }
+        // 不包含0
+        String regex = "^[1-9]\\d*(\\.\\d*0+)?$";
+        // 包含0
+        String regex2 = "^(0|[1-9]\\d*(\\.\\d*0+)?)$";
+        return  qtyStr.matches(regex2);
     }
 }

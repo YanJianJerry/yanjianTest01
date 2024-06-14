@@ -1,4 +1,4 @@
-package Test.learning;
+package test.learning;
 /*
  *continue 跳到循环开始的地方（跳出此次循环）
  * break 跳出循环

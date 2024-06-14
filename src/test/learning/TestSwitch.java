@@ -1,4 +1,5 @@
-package Test.learning;/*
+package test.learning;
+/**
  * 测试switch的语句用法
  * 以及随机数的使用
  */
