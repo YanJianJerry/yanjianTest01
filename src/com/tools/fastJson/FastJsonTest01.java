@@ -3,17 +3,17 @@ package com.tools.fastJson;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.JSONValidator;
 import com.bean.NewInstance;
 import com.bean.pojo.Person;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import static com.bean.StringValue.PERSON;
-//import com.alibaba.fastjson.JSON;
-
 /**
  * @Author: yanjian
  * @CreateDate: 2023/11/15 15:28
@@ -41,6 +41,9 @@ public class FastJsonTest01 {
 
         //6.
 //        test06();
+
+        //7.
+        test07();
     }
 
     /**
@@ -166,5 +169,25 @@ public class FastJsonTest01 {
         //
         JSONArray jsonArr1 = JSON.parseArray(jsonObj1.get("data").toString());
         System.out.println(jsonArr1.get(0));
+    }
+
+    /**
+     * 校验字符串是否为JSON格式
+     */
+    public static void test07(){
+        // 定义变量
+        String jsonStr = "rqwerqerq";
+        String jsonStr1 = "[{\"skill\":\"Java\",\"name\":\"Jerry\"},{\"skill\":\"Python\",\"name\":\"Tom\"}]";
+        String jsonStr2 = "{\"name\":\"John\", \"age\":30}";
+        boolean isValid;
+
+        //
+        JSONValidator validator = JSONValidator.from(jsonStr2);
+        isValid = validator.validate();
+        System.out.println(isValid);
+
+        //
+        boolean isJson = JSON.isValid(jsonStr);
+        System.out.println(isJson);
     }
 }

@@ -14,6 +14,7 @@ public class FastJsonTest02 {
         fastJsonTest02.test01();
     }
 
+    //
     public void test01(){
         Map<String,Object> map1 = new HashMap<>();
         HashMap<String, String> map2;
@@ -29,5 +30,8 @@ public class FastJsonTest02 {
         JSONArray jsonArr1 = JSON.parseArray(map2.get("data"));
         System.out.println(jsonArr1.get(0));
 
+
     }
+
+    //
 }
