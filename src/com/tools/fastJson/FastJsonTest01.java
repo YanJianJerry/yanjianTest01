@@ -24,7 +24,7 @@ import static com.bean.StringValue.PERSON;
  * @UpdateUser:
  */
 public class FastJsonTest01 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //1.序列化 反序列化 String and JavaBean
 //        test01();
 
@@ -174,7 +174,7 @@ public class FastJsonTest01 {
     /**
      * 校验字符串是否为JSON格式
      */
-    public static void test07(){
+    public static void test07() throws IOException {
         // 定义变量
         String jsonStr = "rqwerqerq";
         String jsonStr1 = "[{\"skill\":\"Java\",\"name\":\"Jerry\"},{\"skill\":\"Python\",\"name\":\"Tom\"}]";
@@ -182,8 +182,9 @@ public class FastJsonTest01 {
         boolean isValid;
 
         //
-        JSONValidator validator = JSONValidator.from(jsonStr2);
-        isValid = validator.validate();
+        try (JSONValidator validator = JSONValidator.from(jsonStr2)) {
+            isValid = validator.validate();
+        }
         System.out.println(isValid);
 
         //
