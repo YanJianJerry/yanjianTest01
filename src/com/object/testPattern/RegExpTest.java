@@ -74,4 +74,16 @@ public class RegExpTest {
         String regex2 = "^(0|[1-9]\\d*(\\.\\d*0+)?)$";
         return  qtyStr.matches(regex2);
     }
+
+    // 判断是否为有理数
+    public static boolean isNumber(String qtyStr){
+        if(qtyStr == null || "".equalsIgnoreCase(qtyStr)){
+            return false;
+        }
+        // 不包含0
+        String regex = "";
+        // 包含0
+        String regex2 = "^-?\\d+(\\.\\d+)?$";
+        return  qtyStr.matches(regex2);
+    }
 }
