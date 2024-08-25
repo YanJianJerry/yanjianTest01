@@ -9,17 +9,17 @@ package com.object.myObjects;
  * @UpdateDate:
  * @UpdateUser:
  */
-public class Student {
+public class StudentObj {
     private String name;
     private int age;
 
     //无参构造器，new Student(); 的时候被调用
-    public Student(){
+    public StudentObj(){
 
     }
 
     //含参构造器
-    public Student(String name, int age) {
+    public StudentObj(String name, int age) {
         this.name = name;
         this.age = age;
     }

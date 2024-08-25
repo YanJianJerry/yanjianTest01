@@ -1,11 +1,12 @@
-package com.yan.oop;
+package yan.oop;
 
 import java.util.Objects;
 
 /**
  * @author yanjian
  */
-public class Student extends Person {
+public class StudentOop extends PersonOop {
+    public double assets;
     private String studentId;
     private int GPA;
     public String grade;
@@ -17,7 +18,7 @@ public class Student extends Person {
      * new本质在于调用构造方法
      * 初始化对象的值
      */
-    public Student() {
+    public StudentOop() {
         super();//构造器的第一句都是调用父类的构造器，如果没有则默认调用父类的无参构造器
         this.studentId = "2018001";
         this.grade = "Freshman";
@@ -30,21 +31,21 @@ public class Student extends Person {
     }
 
     //如果定义了有参构造，无参构造必须显示定义
-    public Student(String name) {
+    public StudentOop(String name) {
         this.name = name;
     }
 
-    public Student(String identityId, String studentId) {
+    public StudentOop(String identityId, String studentId) {
         super(identityId);
         this.studentId = studentId;
     }
 
-    public Student(String humanity, String identityId, String name, int age, int height, int weight, String studentId) {
+    public StudentOop(String humanity, String identityId, String name, int age, int height, int weight, String studentId) {
         super(humanity, identityId, name, age, height, weight);
         this.studentId = studentId;
     }
 
-    public Student(String humanity, String identityId, String name, int age, int height, int weight, String studentId, int GPA, String grade) {
+    public StudentOop(String humanity, String identityId, String name, int age, int height, int weight, String studentId, int GPA, String grade) {
         super(humanity, identityId, name, age, height, weight);
         this.studentId = studentId;
         this.GPA = GPA;
@@ -71,16 +72,16 @@ public class Student extends Person {
     public boolean equalsStudent(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Student student = (Student) o;
-        return studentId.equals(student.studentId) && Objects.equals(this.identityId,student.identityId);
+        StudentOop studentOop = (StudentOop) o;
+        return studentId.equals(studentOop.studentId) && Objects.equals(this.identityId, studentOop.identityId);
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Student student = (Student) o;
-        return Objects.equals(studentId, student.studentId);
+        StudentOop studentOop = (StudentOop) o;
+        return Objects.equals(studentId, studentOop.studentId);
     }
 
     @Override

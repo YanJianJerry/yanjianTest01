@@ -1,8 +1,8 @@
-package com.yan.oop;
+package yan.oop;
 
 import java.util.Objects;
 
-public class Person {
+public class PersonOop {
     //私有属性无法被继承（子类拥有但是无法访问）
     private String humanity;
     private int MAX_AGE = 200;;
@@ -20,7 +20,7 @@ public class Person {
     /*
      构造函数
      */
-    public Person() {
+    public PersonOop() {
         humanity = "光辉";
         identityId = "000000";
         age = 0;
@@ -28,7 +28,7 @@ public class Person {
         weight = 0;
     }
 
-    public Person(String identityId) {
+    public PersonOop(String identityId) {
         this.identityId = identityId;
         humanity = "光辉";
         age = 0;
@@ -36,7 +36,7 @@ public class Person {
         weight = 0;
     }
 
-    public Person(String identityId,String name){
+    public PersonOop(String identityId, String name){
         this.name = name;
         this.identityId = identityId;
         humanity = "光辉";
@@ -45,7 +45,7 @@ public class Person {
         weight = 0;
     }
 
-    public Person(String humanity, String identityId, String name, int age, int height, int weight) {
+    public PersonOop(String humanity, String identityId, String name, int age, int height, int weight) {
         this.humanity = humanity;
         this.identityId = identityId;
         this.name = name;
@@ -54,7 +54,7 @@ public class Person {
         this.weight = weight;
     }
 
-    public Person(String humanity, String identityId, String name, int age, int height, int weight, double assets) {
+    public PersonOop(String humanity, String identityId, String name, int age, int height, int weight, double assets) {
         this.humanity = humanity;
         this.identityId = identityId;
         this.name = name;
@@ -104,10 +104,14 @@ public class Person {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return Objects.equals(humanity, person.humanity) && Objects.equals(identityId, person.identityId);
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        PersonOop personOop = (PersonOop) o;
+        return Objects.equals(humanity, personOop.humanity) && Objects.equals(identityId, personOop.identityId);
     }
 
     @Override

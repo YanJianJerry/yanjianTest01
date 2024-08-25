@@ -1,7 +1,5 @@
 package com.object.testCollection;
 
-import com.object.myObjects.Student;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -30,7 +28,7 @@ public class TestCollectionDemo {
         System.out.println("col1为 "+col1);//[a, b, c] 打印的不是地址，而是字符串，说明重写了toString()方法
 
         //2. boolean collection.add(E e); 把对象放入集合中
-        Student stu1 = new Student("张三",18);
+        com.object.myObjects.StudentObj stu1 = new com.object.myObjects.StudentObj("张三",18);
         Collection col2 = new ArrayList();
         col2.add(stu1);
         System.out.println("col2为 "+col2);//[张三 -- 18]

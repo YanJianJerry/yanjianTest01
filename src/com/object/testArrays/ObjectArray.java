@@ -1,7 +1,5 @@
 package com.object.testArrays;
 
-import com.object.myObjects.Student;
-
 /**
  * @Author: yanjian
  * @CreateDate: 2022/05/01 17:49
@@ -14,7 +12,7 @@ import com.object.myObjects.Student;
 public class ObjectArray {
 
     //{null,null,```,null} 创建了空间为30的对象数组
-    Student[] students = new Student[30];
+    com.object.myObjects.StudentObj[] studentObjs = new com.object.myObjects.StudentObj[30];
 
 
     //add:把对象实例放到对象数组中(赋值)，放到第一个为null的地方
@@ -25,10 +23,10 @@ public class ObjectArray {
      * @param: null
      * @return:
      */
-    public boolean addStudent(Student student) {
+    public boolean addStudent(com.object.myObjects.StudentObj studentObj) {
         int index = -1;
-        for (int i = 0; i < students.length; i++) {
-            if (students[i] == null) {
+        for (int i = 0; i < studentObjs.length; i++) {
+            if (studentObjs[i] == null) {
                 index = i;
                 break;
             }
@@ -39,16 +37,16 @@ public class ObjectArray {
             System.out.println("数组已满，增加失败！");
             return false;
         }else{
-            students[index] = student;
+            studentObjs[index] = studentObj;
             return true;
         }
     }
 
     //show:遍历显示 注意：Array.length方法，只是算数组的空间长度，并不知道里面有多少非空的值(有用的值)
     public void showStudents(){
-        for (int i = 0; i < students.length; i++) {
-            if (students[i] != null)
-            System.out.println(students[i].getName()+"\t"+students[i].getAge());
+        for (int i = 0; i < studentObjs.length; i++) {
+            if (studentObjs[i] != null)
+            System.out.println(studentObjs[i].getName()+"\t"+ studentObjs[i].getAge());
         }
     }
 }
