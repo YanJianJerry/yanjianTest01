@@ -9,9 +9,17 @@ package com.bean.pojo;
  * @UpdateDate:
  * @UpdateUser:
  */
-public class TeacherJob {
+public class TeacherJob extends Person{
     public String subject;
     public String school;
+    private String teacherNo;
+
+    // 构造器
+    public TeacherJob(){
+        super();
+        this.school = "University";
+        this.teacherNo = String.valueOf(System.currentTimeMillis());
+    }
 
     public String getSubject() {
         return subject;
@@ -29,11 +37,26 @@ public class TeacherJob {
         this.school = school;
     }
 
+    public String getTeacherNo() {
+        return teacherNo;
+    }
+
+    public void setTeacherNo(String teacherNo) {
+        this.teacherNo = teacherNo;
+    }
+
+    @Override
+    public void introduce(){
+        System.out.println("My name is "+this.name+",a teacher in "+this.school+".");
+    }
+
     @Override
     public String toString() {
         return "TeacherJob{" +
                 "subject='" + subject + '\'' +
                 ", school='" + school + '\'' +
+                ", teacherNo='" + teacherNo + '\'' +
+                ", name='" + name + '\'' +
                 '}';
     }
 }

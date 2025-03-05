@@ -21,6 +21,7 @@ public class FastJsonTest02 {
         map1.put("code","OK");
         String[] strArray = {"123","234"};
         map1.put("data",strArray);
+        System.out.println(map1);
 
         String str = "{\"message\":\"SUCCESS\",\"data\":[\"2024-01-05\"]}";
         map2 = JSON.parseObject(str, new TypeReference<HashMap<String, String>>(){});

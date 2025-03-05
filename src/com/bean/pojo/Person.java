@@ -2,6 +2,8 @@ package com.bean.pojo;
 
 import com.alibaba.fastjson.annotation.JSONField;
 
+import java.util.UUID;
+
 /**
  * @Author: yanjian
  * @CreateDate: 2023/11/15 15:49
@@ -38,6 +40,17 @@ public class Person {
      * 工作
      */
     private Object job;
+
+    public Person() {
+        this.id = UUID.randomUUID().toString();
+        this.name = "匿名";
+        this.age = 18;
+    }
+
+    public Person(String name) {
+        this.name = name;
+        new Person();
+    }
 
     public static String getGender() {
         return gender;
@@ -85,6 +98,11 @@ public class Person {
 
     public void setJob(Object job) {
         this.job = job;
+    }
+
+    // 自我介绍
+    public void introduce(){
+        System.out.println("My name is "+this.name+",and I am "+this.age+" years old.");
     }
 
     @Override

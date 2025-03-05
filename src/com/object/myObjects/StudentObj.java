@@ -15,7 +15,14 @@ public class StudentObj {
 
     //无参构造器，new Student(); 的时候被调用
     public StudentObj(){
+        name = "匿名";
+        age = 0;
+    }
 
+    //含参构造器
+    public StudentObj(String name) {
+        this.name = name;
+        this.age = 18;
     }
 
     //含参构造器
