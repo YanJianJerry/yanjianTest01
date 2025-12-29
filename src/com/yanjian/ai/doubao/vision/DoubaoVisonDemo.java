@@ -148,7 +148,7 @@ public class DoubaoVisonDemo {
 
             JSONObject bodyJson = new JSONObject();
             bodyJson.put("messages",messages);
-            bodyJson.put("model",modelId);
+            bodyJson.put("pattern",modelId);
 //            bodyJson.put("max_tokens",4096);//最大tokens返回
 //            bodyJson.put("response_format",new JSONObject().put("type","json_object"));//[text, json_object]
             bodyJson.put("temperature",0.5);//ossible values: <= 2

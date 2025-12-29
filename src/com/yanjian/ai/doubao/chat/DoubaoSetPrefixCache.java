@@ -7,7 +7,6 @@ import com.yanjian.util.properties.PropertiesUtils;
 import okhttp3.*;
 
 import java.io.IOException;
-import java.util.Map;
 
 public class DoubaoSetPrefixCache {
 
@@ -89,7 +88,7 @@ public class DoubaoSetPrefixCache {
 
             JSONObject bodyJson = new JSONObject();
             bodyJson.put("messages",messages);
-            bodyJson.put("model",modelId);//推理接入点ID
+            bodyJson.put("pattern",modelId);//推理接入点ID
             bodyJson.put("ttl",604800);//过期时间7天，每次使用后会重置
             bodyJson.put("mode","common_prefix");//代表使用的前缀缓存模式
 

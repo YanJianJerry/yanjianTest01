@@ -63,7 +63,7 @@ public class DoubaoChatWithCacheDemo1 {
 
             JSONObject bodyJson = new JSONObject();
             bodyJson.put("messages",messages);
-            bodyJson.put("model",model);//调用的AI模型
+            bodyJson.put("pattern",model);//调用的AI模型
             bodyJson.put("context_id","ctx-20250701182432-4mszl");//调用的AI模型
 //            bodyJson.put("max_tokens",8000);
 //            bodyJson.put("response_format",new JSONObject().put("type","json_object"));//[text, json_object]

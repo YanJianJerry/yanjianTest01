@@ -22,7 +22,8 @@ import java.util.Map;
 
 public class DoubaoChatDemo {
 
-    public static String BASEURL = "https://ark.cn-beijing.volces.com/api/v3/chat/completions";
+//    public static String BASEURL = "https://ark.cn-beijing.volces.com/api/v3/chat/completions";
+    public static String BASEURL = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions";
 
     public static String API_KEY = null;
 
@@ -36,6 +37,7 @@ public class DoubaoChatDemo {
     public static String DEEPSEEK_R1_32B = "deepseek-r1-distill-qwen-32b-250120";
 
     public static String EDP_AI_01 = "ep-20250524190318-jm94z";
+    public static String testModelId = "qwen-plus";
 
     public static String VISION_1_5_PRO = "doubao-1.5-vision-pro-250328";
     public static String VISION_1_5_LITE = "doubao-1.5-vision-lite-250315";
@@ -47,12 +49,12 @@ public class DoubaoChatDemo {
 
     public static String callDoubaoAi(String messages) {
         try {
-            PropertiesUtils.init("dev", "D:/config/yanjian/config.properties");
             if(API_KEY == null){
+                PropertiesUtils.init("dev", "D:/config/yanjian/config.properties");
                 API_KEY = PropertiesUtils.getProperty("doubao.apikey");
             }
             String content = DoubaoVisaonStatic.requirement+messages;
-            return sendRequestToDaobaoAi(BASEURL,content,EDP_AI_01);
+            return sendRequestToDaobaoAi(BASEURL,content,testModelId);
         }catch (Exception e){
             e.printStackTrace();
             return null;

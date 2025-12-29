@@ -1,4 +1,4 @@
-package exception;
+package com.exception;
 
 public class tesAgeException {
     public static void main(String[] args) throws IllegalAgeException {
