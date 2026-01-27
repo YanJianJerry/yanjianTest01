@@ -2,7 +2,7 @@ package com.object.testString;
 
 
 import com.common.publicmethod.PM;
-import com.sun.deploy.util.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 
@@ -32,7 +32,7 @@ public class TestStringDemo01 {
     public static void test01(){
         String[] array= {"a","b","c"};
         String str1 = "a" + "b";
-        ArrayList list = new ArrayList<String>();
+        ArrayList<String> list = new ArrayList<String>();
         list.add("1");
         list.add("2");
         list.add("3");

@@ -1,6 +1,7 @@
 package com.object.testString;
 
-import com.sun.deploy.util.StringUtils;
+
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 
@@ -17,7 +18,7 @@ public class TestStringUtilsDemo {
     public static void main(String[] args) {
         //1.String join(Collection var0, String var1)
         String[] array= {"a","b","c"};
-        ArrayList list = new ArrayList<String>();
+        ArrayList<String> list = new ArrayList<String>();
         list.add("1");
         list.add("2");
         list.add("3");

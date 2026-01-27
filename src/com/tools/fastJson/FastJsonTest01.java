@@ -44,6 +44,7 @@ public class FastJsonTest01 {
 
         //7.
         test07();
+
     }
 
     /**

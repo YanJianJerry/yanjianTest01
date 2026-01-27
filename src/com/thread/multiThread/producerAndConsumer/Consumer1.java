@@ -1,6 +1,6 @@
 package com.thread.multiThread.producerAndConsumer;
 
-import sun.nio.cs.ext.SJIS;
+//import sun.nio.cs.ext.SJIS;
 
 public class Consumer1 implements Runnable{
 
