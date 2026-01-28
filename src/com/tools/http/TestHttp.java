@@ -36,7 +36,7 @@ public class TestHttp {
 
             // 构建请求
             Request request = new Request.Builder()
-                    .url("https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=103a7f3c-2b25-40ba-b6e7-f194c9724913") // 替换为你自己的 API 地址
+                    .url("") // 替换为你自己的 API 地址
                     .post(body)
                     .build();
 
@@ -71,7 +71,7 @@ public class TestHttp {
 
             // 构建请求
             Request request = new Request.Builder()
-                    .url("https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=3cd9e7d4-54d4-4b7f-8b27-39ccacb7783e") // 替换为你自己的 API 地址
+                    .url("") // 替换为你自己的 API 地址
                     .post(body)
                     .build();
 

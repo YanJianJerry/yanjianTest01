@@ -98,7 +98,7 @@ public class DailyScheduler {
             ArrayList<String> mentioned_mobile_list = new ArrayList<>();
             mentioned_mobile_list.add("@all");
             textMap.put("mentioned_mobile_list", mentioned_mobile_list);
-            textMap.put("content", "各位，点了外卖没");
+            textMap.put("content", "");
             jsonMap.put("text", textMap);
             jsonMap.put("msgtype", "text");
 
@@ -108,7 +108,7 @@ public class DailyScheduler {
 
             // 构建请求
             Request request = new Request.Builder()
-                    .url("https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=3cd9e7d4-54d4-4b7f-8b27-39ccacb7783e") // 替换为你自己的 API 地址
+                    .url("") // 替换为你自己的 API 地址
                     .post(body)
                     .build();
 
